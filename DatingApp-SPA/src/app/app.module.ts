@@ -26,13 +26,15 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { MemberDetailResolver } from './_resolvers/member-detail-resolver';
 import { MemberListResolver } from './_resolvers/member-list-resolver';
 import { UserService } from './_services/user.service';
+import { MemberEditResolver } from './_resolvers/member-edit-resolver';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes';
+
 
 
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
-
-
 
 @NgModule({
   declarations: [
@@ -44,8 +46,9 @@ export function tokenGetter() {
     ListsComponent,
     MessagesComponent,
     MemberCardComponent,
-    MemberDetailComponent
-  ],
+    MemberDetailComponent,
+    MemberEditComponent,
+    ],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -64,7 +67,16 @@ export function tokenGetter() {
       }
     })
   ],
-  providers: [AuthService, UserService, ErrorInterceptorProvider, AlertifyService, MemberDetailResolver, MemberListResolver],
+  providers: [
+    AuthService,
+    UserService,
+    ErrorInterceptorProvider,
+    AlertifyService,
+    MemberDetailResolver,
+    MemberListResolver,
+    MemberEditResolver,
+    PreventUnsavedChanges
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
