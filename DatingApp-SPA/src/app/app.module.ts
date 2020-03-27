@@ -8,6 +8,7 @@ import { TabsModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { FileUploadModule } from 'ng2-file-upload';
 
 
 import { AppComponent } from './app.component';
@@ -29,6 +30,8 @@ import { UserService } from './_services/user.service';
 import { MemberEditResolver } from './_resolvers/member-edit-resolver';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+
 
 
 
@@ -48,6 +51,7 @@ export function tokenGetter() {
     MemberCardComponent,
     MemberDetailComponent,
     MemberEditComponent,
+    PhotoEditorComponent,
     ],
   imports: [
     BrowserModule,
@@ -58,6 +62,7 @@ export function tokenGetter() {
     TabsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     NgxGalleryModule,
+    FileUploadModule,
     JwtModule.forRoot({
       config: {
         // tslint:disable-next-line: object-literal-shorthand

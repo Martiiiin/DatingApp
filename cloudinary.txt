@@ -1,0 +1,3 @@
+cloud name: dmzpcnagd
+API key: 459849347292219
+API secret: gNqcoesjekACMxqKP5AaA35bCsQ
