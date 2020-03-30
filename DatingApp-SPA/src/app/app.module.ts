@@ -33,7 +33,7 @@ import { MemberEditResolver } from './_resolvers/member-edit-resolver';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
-
+import { TimeAgoPipe } from './_tools/timeago';
 
 
 
@@ -54,6 +54,7 @@ export function tokenGetter() {
     MemberDetailComponent,
     MemberEditComponent,
     PhotoEditorComponent,
+    TimeAgoPipe
     ],
   imports: [
     BrowserModule,
